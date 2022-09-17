@@ -10,12 +10,25 @@ export const Page = () => {
 
     return (
         <div>
-            <input
-                type="text"
-                placeholder="search"
-                aria-label="search"
-                onChange={(e) => setSearchQuery(e.target.value)}
-            />
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th colSpan={2}>Stats</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Average fans</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Unique genres</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <table>
                 <thead>
                     <tr>
@@ -29,7 +42,7 @@ export const Page = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {results.map((artist) => (
+                    {artists.map((artist) => (
                         <tr key={artist.index}>
                             <td>{artist.name}</td>
                             <td>{artist.type}</td>
