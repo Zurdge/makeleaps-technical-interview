@@ -11,6 +11,7 @@ const root = ReactDOM.createRoot(
 root.render(
     <BrowserRouter>
         <Routes>
+            <Route path="/1" element={<div>No page...just jest tests</div>} />
             <Route path="/2" element={<Page2 />} />
             <Route path="/3" element={<Page3 />} />
             <Route path="*" element={<div>404</div>} />
