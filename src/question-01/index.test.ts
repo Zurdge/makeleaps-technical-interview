@@ -30,6 +30,7 @@ describe('Find artist', () => {
             name: 'Andy Murry',
         });
 
+        // eslint-disable-next-line no-use-before-define
         expect(originalArtistData).toEqual(artistsData);
     });
 
