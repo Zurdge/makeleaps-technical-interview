@@ -21,6 +21,7 @@ export function Page() {
             }}
         >
             <Arrow type="down" />
+            <Arrow type="up" />
             <Arrow type={data.direction} />
         </div>
     );
