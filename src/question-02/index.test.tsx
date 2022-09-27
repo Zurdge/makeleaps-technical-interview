@@ -8,13 +8,16 @@ describe('React', () => {
     test('Can search Mullins and return Underwood Mullins in table', async () => {
         render(<Page />);
 
-        const rivasAvila = screen.getByText(/Rivas Avila/i);
+        const andyMurry = screen.getByText(/Andy Murry/i);
         const underwoodMullins = screen.getByText(/Underwood Mullins/i);
 
         const search = screen.getByRole('textbox', {name: /search/i});
-        await userEvent.type(search, 'Mullins');
+        userEvent.type(search, 'mu');
 
         expect(underwoodMullins).toBeInTheDocument();
-        expect(rivasAvila).not.toBeInTheDocument();
+        expect(andyMurry).toBeInTheDocument();
+
+        userEvent.type(search, 'mullins');
+        expect(andyMurry).not.toBeInTheDocument();
     });
 });

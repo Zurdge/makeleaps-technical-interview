@@ -1,4 +1,4 @@
-# Goal
+# Goals
 
 1 - `findByName` will take 1 string as an input.
 Make the function return the object for the correct artist name

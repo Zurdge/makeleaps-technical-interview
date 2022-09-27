@@ -1,12 +1,17 @@
 import {useMemo, useState} from 'react';
 import artists from '../data/artists';
 
-export const Page = () => {
+export function Page() {
     const [searchQuery, setSearchQuery] = useState<string>('');
 
-    const results = useMemo(() => {
-        return artists.filter((artist) => artist.name.includes(searchQuery));
-    }, [searchQuery]);
+    const results = useMemo(
+        () =>
+            artists.filter((artist) =>
+                new RegExp(searchQuery, `gi`).test(artist.name)
+            ),
+        // artist.name.includes(searchQuery));
+        [searchQuery]
+    );
 
     return (
         <div>
@@ -41,4 +46,4 @@ export const Page = () => {
             </table>
         </div>
     );
-};
+}
