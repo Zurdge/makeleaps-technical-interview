@@ -9,7 +9,6 @@ export function Page() {
             artists.filter((artist) =>
                 new RegExp(searchQuery, `gi`).test(artist.name)
             ),
-        // artist.name.includes(searchQuery));
         [searchQuery]
     );
 

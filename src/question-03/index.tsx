@@ -1,4 +1,3 @@
-import {FC} from 'react';
 import {ApiHook} from '../data/fake-api-hook';
 
 interface ArrowProps {

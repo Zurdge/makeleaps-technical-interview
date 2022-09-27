@@ -37,5 +37,6 @@ module.exports = {
         '@typescript-eslint/await-thenable': 'off',
         'import/no-unresolved': 'off',
         'import/extensions': 'off',
+        'no-nested-ternary': 'off',
     },
 };
