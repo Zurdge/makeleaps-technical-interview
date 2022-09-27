@@ -4,15 +4,22 @@ import artistsData from '../data/artists';
 /*
 No need to edit this file
 */
-describe('Find artist', () => {
+describe('Question-01', () => {
     test('Function returns Andy Murry', () => {
+        // eslint-disable-next-line no-console
+        console.log('Question-01 : Task 1');
+
         const artists = filterByType('Rock');
         expect(artists).toHaveLength(4);
     });
 
     test('Function returns sorted ascending array', () => {
+        // eslint-disable-next-line no-console
+        console.log('Question-01 : Task 2');
+
         // eslint-disable-next-line no-use-before-define
         expect(originalArtistData).toEqual(artistsData);
+
         const artists = sortByPopularity();
         expect(artists[0]).toEqual({
             index: 6,
@@ -35,6 +42,12 @@ describe('Find artist', () => {
     });
 
     test('Function returns sorted descending array', () => {
+        // eslint-disable-next-line no-console
+        console.log('Question-01 : Task 3');
+
+        // eslint-disable-next-line no-use-before-define
+        expect(originalArtistData).toEqual(artistsData);
+
         const artists = sortByPopularity('desc');
         expect(artists[0]).toEqual({
             index: 8,
@@ -51,6 +64,9 @@ describe('Find artist', () => {
             type: 'Heavy Metal',
             name: 'Schmidt Chaney',
         });
+
+        // eslint-disable-next-line no-use-before-define
+        expect(originalArtistData).toEqual(artistsData);
     });
 });
 

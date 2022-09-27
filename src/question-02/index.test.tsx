@@ -4,8 +4,11 @@ import {Page} from './index';
 /*
 No need to edit this file
 */
-describe('React', () => {
+describe('Question-02', () => {
     test('Can search Mullins and return Underwood Mullins in table', async () => {
+        // eslint-disable-next-line no-console
+        console.log('Question-02 : Task 1');
+
         render(<Page />);
 
         const andyMurry = screen.getByText(/Andy Murry/i);
@@ -22,6 +25,9 @@ describe('React', () => {
     });
 
     test('Render correct average', () => {
+        // eslint-disable-next-line no-console
+        console.log('Question-02 : Task 2');
+
         render(<Page />);
         const average = screen.getByText(/average/i);
         expect(average).toHaveTextContent('Average : 22970.7');
