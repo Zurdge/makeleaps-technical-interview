@@ -12,8 +12,16 @@ export function Page() {
         [searchQuery]
     );
 
+    const getAverage =
+        artists
+            .map(({fans}) => fans)
+            .reduce(
+                (previousValue, currentValue) => previousValue + currentValue
+            ) / artists.length;
+
     return (
         <div>
+            <h2 role="complementary">Average : {getAverage}</h2>
             <input
                 type="text"
                 placeholder="search"

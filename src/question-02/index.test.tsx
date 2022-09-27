@@ -20,4 +20,10 @@ describe('React', () => {
         userEvent.type(search, 'mullins');
         expect(andyMurry).not.toBeInTheDocument();
     });
+
+    test('Render correct average', () => {
+        render(<Page />);
+        const average = screen.getByText(/average/i);
+        expect(average).toHaveTextContent('Average : 22970.7');
+    });
 });
