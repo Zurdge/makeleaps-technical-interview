@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {Page} from './question-02';
+import {Page} from './question-03';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement

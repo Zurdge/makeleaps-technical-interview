@@ -1,57 +1,28 @@
-import {useMemo, useState} from 'react';
-import artists from '../data/artists';
+import {FC} from 'react';
+import {ApiHook} from '../data/fake-api-hook';
 
-export const Page = () => {
-    const [searchQuery, setSearchQuery] = useState<string>('');
+interface ArrowProps {
+    type: 'down' | 'up';
+}
+function Arrow({type}: ArrowProps) {
+    return <img alt="arrow" src={`/${type}.png`} />;
+}
 
-    const results = useMemo(() => {
-        return artists.filter((artist) => artist.name.includes(searchQuery));
-    }, [searchQuery]);
+export function Page() {
+    const data = ApiHook();
 
     return (
-        <div>
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th colSpan={2}>Stats</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Average fans</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>Unique genres</td>
-                            <td>0</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th colSpan={2}>Artists</th>
-                    </tr>
-                    <tr>
-                        <th>Artist</th>
-                        <th>Genre</th>
-                        <th>Albums</th>
-                        <th>Fans</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {artists.map((artist) => (
-                        <tr key={artist.index}>
-                            <td>{artist.name}</td>
-                            <td>{artist.type}</td>
-                            <td>{artist.albums}</td>
-                            <td>{artist.fans}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+        <div
+            style={{
+                padding: 5,
+                borderRadius: 5,
+                borderStyle: 'solid',
+                borderColor: 'red',
+                borderWidth: 2,
+            }}
+        >
+            <Arrow type="down" />
+            <Arrow type={data.direction} />
         </div>
     );
-};
+}
