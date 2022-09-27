@@ -1,4 +1,4 @@
-[
+export default [
     {
       "index": 0,
       "fans": 34849,

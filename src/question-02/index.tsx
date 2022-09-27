@@ -1,5 +1,5 @@
 import {useMemo, useState} from 'react';
-import artists from '../data/artists.json';
+import artists from '../data/artists';
 
 export const Page = () => {
     const [searchQuery, setSearchQuery] = useState<string>('');

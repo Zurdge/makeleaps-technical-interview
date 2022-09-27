@@ -1,4 +1,4 @@
-import artists from '../data/artists.json';
+import artists from '../data/artists';
 
 /*
 This function should return the object with a matching artist name
