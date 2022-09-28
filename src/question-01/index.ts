@@ -2,7 +2,7 @@
 import artists from '../data/artists';
 
 /*
-This function should return the object with a matching artist name
+This function should return an array of objects with matching type
 */
 export const filterByType = (type: string) => {};
 
