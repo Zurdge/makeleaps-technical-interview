@@ -8,7 +8,7 @@ module.exports = {
     extends: ['standard-with-typescript', 'airbnb', 'prettier'],
     overrides: [
         {
-            files: ['*.ts', '*.tsx'], // Your TypeScript files extension
+            files: ['*.ts', '*.tsx', '*.css'], // Your TypeScript files extension
 
             // As mentioned in the comments, you should extend TypeScript plugins here,
             // instead of extending them outside the `overrides`.

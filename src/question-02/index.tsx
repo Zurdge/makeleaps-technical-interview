@@ -1,32 +1,17 @@
-import {useMemo, useState} from 'react';
+/* eslint-disable @typescript-eslint/no-empty-function */
 import artists from '../data/artists';
 
 export function Page() {
-    const [searchQuery, setSearchQuery] = useState<string>('');
-
-    const results = useMemo(
-        () =>
-            artists.filter((artist) =>
-                new RegExp(searchQuery, `gi`).test(artist.name)
-            ),
-        [searchQuery]
-    );
-
-    const getAverage =
-        artists
-            .map(({fans}) => fans)
-            .reduce(
-                (previousValue, currentValue) => previousValue + currentValue
-            ) / artists.length;
+    const results = [...artists];
 
     return (
         <div>
-            <h2 role="complementary">Average : {getAverage}</h2>
+            <h2 role="complementary">Average : {0}</h2>
             <input
                 type="text"
                 placeholder="search"
                 aria-label="search"
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(e) => {}}
             />
             <table>
                 <thead>
